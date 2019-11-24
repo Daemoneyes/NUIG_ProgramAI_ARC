@@ -23,3 +23,11 @@ def read_JsonFile(filePath):
         testY.append(i["output"])
     
     return trainX,trainY,testX,testY
+
+
+
+def read_JsonPath(argList):
+    try:
+        return argList[1]
+    except Exception:
+        raise "Please Provide File Path"

@@ -6,7 +6,7 @@ Created on Sat Nov 23 05:36:16 2019
 """
 import sys
 import numpy as np
-from tools import read_JsonFile
+from tools import read_JsonFile,read_JsonPath
 
 
     
@@ -23,15 +23,13 @@ def solve(data):
     
 
 if __name__ == "__main__":
-    if(len(sys.argv)==2):
-        jsonFilePath = sys.argv[1]
-        trainX,trainY,testX,testY = read_JsonFile(jsonFilePath)
-        for i in trainX:
-            solve(i)
-        for i in testX:
-            solve(i)
-    else:
-        raise "Please Provide File Path"
+    jsonFilePath = read_JsonPath(sys.argv)
+    trainX,trainY,testX,testY = read_JsonFile(jsonFilePath)
+    for i in trainX:
+        solve(i)
+    for i in testX:
+        solve(i)
+
 
 
 
