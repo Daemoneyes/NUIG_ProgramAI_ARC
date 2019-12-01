@@ -6,10 +6,11 @@ Created on Sun Nov 24 03:37:37 2019
 """
 import json
 
+
 # Method to read the Json file and then response with
 # TrainX, TrainY, TestX,TestY
 def read_JsonFile(filePath):
-    with open(filePath,"r") as f:
+    with open(filePath, "r") as f:
         data = json.load(f)
     trainX = []
     trainY = []
@@ -21,9 +22,7 @@ def read_JsonFile(filePath):
     for i in data["test"]:
         testX.append(i["input"])
         testY.append(i["output"])
-    
-    return trainX,trainY,testX,testY
-
+    return trainX, trainY, testX, testY
 
 
 def read_JsonPath(argList):
